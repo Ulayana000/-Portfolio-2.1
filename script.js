@@ -1,15 +1,12 @@
 function toggleTheme() {
-    document.body.classList.toggle("dark");
+    let body = document.body;
+    let button = document.querySelector(".theme-btn");
 
-    if (document.body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
+    if (body.classList.contains("dark")) {
+        body.classList.remove("dark");
+        button.textContent = "🌙";
     } else {
-        localStorage.setItem("theme", "light");
-    }
-}
-
-window.onload = function () {
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark");
+        body.classList.add("dark");
+        button.textContent = "☀️";
     }
 }
